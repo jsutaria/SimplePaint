@@ -4,35 +4,30 @@ import java.awt.event.*;
 import java.applet.*;
 
 public class SimplePaint extends Applet implements MouseListener, MouseMotionListener {
-   /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private final static int
-   			   WHITE = 6,
-   			   PURPLE = 5,
-   			   YELLOW = 4,
-   			   BLUE = 3,			
-   			   GREEN = 2,
-               RED = 1, 
-               BLACK = 0;     
-
-   private int thisColor = BLACK;  
-   private int oldX, oldY;   
-   private boolean dragging;    
-   private Graphics graphicsForDrawing;
+		WHITE = 6,
+   		PURPLE = 5,
+   		YELLOW = 4,
+		BLUE = 3,			
+   		GREEN = 2,
+               	RED = 1, 
+               	BLACK = 0;     
+	
+	private int thisColor = BLACK;  
+	private int oldX, oldY;   
+	private boolean dragging;    
+	private Graphics graphicsForDrawing;
    
    
-   public void init() {
+	public void init() {
+		addMouseListener(this);
+		addMouseMotionListener(this);
+	}
 
-      addMouseListener(this);
-      addMouseMotionListener(this);
-   }
-   
-
-   public void update(Graphics graphical) {
-       drawIt(graphical);
-   }
+   	public void update(Graphics graphical) {
+       		drawIt(graphical);
+   	}
    
 
    public void drawIt(Graphics graphical) {
